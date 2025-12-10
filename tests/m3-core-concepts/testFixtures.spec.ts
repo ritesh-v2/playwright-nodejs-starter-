@@ -42,3 +42,34 @@ test('Verify using the context', async ({ context })=> {
 
 
 })
+
+test('Verify login using the pop up', async ({ context }) => {
+
+    const page = await context.newPage()
+
+    await page.goto('https://chatgpt.com/')
+
+    await page.getByRole('button',{name : 'Log in'}).click();
+
+    // const [popup] = await Promise.all([
+    //     context.waitForEvent('page'),
+    //     page.click('Continue with Google')
+    // ]);
+
+    await page.getByRole('button',{name:'Continue with Google'}).click()
+
+    await page.getByText('Email or phone').fill('testststest@gmail.com')
+
+    await page.getByRole('button',{name:'Next'}).click()
+
+    expect (page.getByRole('checkbox',{name : 'Show password'})).not.toBeChecked();
+
+})
+
+test('Verify local host is working', async ({ page }) => {
+
+    await page.goto('http://localhost:3000/')
+
+    await page.close()
+    
+})
