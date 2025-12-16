@@ -99,6 +99,8 @@ test('Verify generic CSS and Xpath loactor by get by Text', async ({ page }) => 
     await page.locator('//form//button[2]').click()
 
     const frame = page.frameLocator('#payment-frame');
+
+    console.log('added files for the test')
     //await frame.getByRole('button', { name: 'Pay' }).click();
     
 })
