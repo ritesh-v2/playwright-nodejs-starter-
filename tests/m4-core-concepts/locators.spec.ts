@@ -100,7 +100,7 @@ test('Verify generic CSS and Xpath loactor by get by Text', async ({ page }) => 
 
     const frame = page.frameLocator('#payment-frame');
 
-    console.log('added files for the test')
+    console.log('added files for the test')//Added info
     //await frame.getByRole('button', { name: 'Pay' }).click();
     
 })
